@@ -1,1 +1,54 @@
 <h1>Contacts</h1>
+
+<!--Définition du tableau-->
+<table mat-table [dataSource]="contactsDataArray">
+    <!--Définition de la colonne "Id"-->
+    <!-- <ng-container matColumnDef="Id">
+        <th mat-header-cell *matHeaderCellDef> Id </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.Id}} </td>
+      </ng-container> -->
+
+    <!--Définition de la colonne "FirstName"-->
+    <ng-container matColumnDef="FirstName">
+        <th mat-header-cell *matHeaderCellDef> FirstName </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.FirstName}} </td>
+      </ng-container>
+    <!--Définition de la colonne "LastName"-->
+    <ng-container matColumnDef="LastName">
+        <th mat-header-cell *matHeaderCellDef> LastName </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.LastName}} </td>
+    </ng-container>    
+    <!--Définition de la colonne "PhoneNumber"-->
+    <ng-container matColumnDef="PhoneNumber">
+        <th mat-header-cell *matHeaderCellDef> PhoneNumber </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.PhoneNumber}} </td>
+    </ng-container>
+    <!--Définition de la colonne "Address"-->
+    <ng-container matColumnDef="Address">
+        <th mat-header-cell *matHeaderCellDef> Address </th>
+        <td mat-cell *matCellDef="let contact"> {{contact.Address}} </td>
+    </ng-container>
+
+    <!--Définition de la colonne "Update"-->
+    <ng-container matColumnDef="Update">
+        <th mat-header-cell *matHeaderCellDef> Update </th>
+        <td mat-cell *matCellDef="let contact"> 
+            <button mat-raised-button color="primary">Update</button>
+        </td>
+    </ng-container>
+
+    <!--Définition de la colonne "Delete"-->
+    <ng-container matColumnDef="Delete">
+        <th mat-header-cell *matHeaderCellDef> Delete </th>
+        <td mat-cell *matCellDef="let contact"> 
+            <button mat-raised-button color="warn">Delete</button>
+        </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+
+
+</table>
+

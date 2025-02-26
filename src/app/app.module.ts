@@ -13,6 +13,8 @@ import { NewcontactComponent } from './newcontact/newcontact.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatTableModule } from '@angular/material/table';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatTableModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
