@@ -33,7 +33,7 @@
     <ng-container matColumnDef="Update">
         <th mat-header-cell *matHeaderCellDef> Update </th>
         <td mat-cell *matCellDef="let contact"> 
-            <button mat-raised-button color="primary">Update</button>
+            <button mat-raised-button color="primary" (click)="onUpdate(contact)">Update</button>
         </td>
     </ng-container>
 

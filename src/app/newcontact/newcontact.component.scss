@@ -1,5 +1,6 @@
 .actionButtons {
     margin-right: 20px;
+    width: 100px;
 }
 
 #contactCard {
@@ -11,4 +12,17 @@
     flex-direction: column;
     align-items: center;
 
+}
+
+.inputContactForm {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+@media(max-width: 900px) {          /*Mise en place de l'autoadaptation de l'écran quand on le réduit*/
+    #contactCard {
+        min-width: 400px;
+    }
+    
 }
