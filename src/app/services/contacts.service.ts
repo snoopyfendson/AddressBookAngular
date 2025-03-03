@@ -32,7 +32,7 @@ export class ContactsService {
     return this.contacts;
   }
 
-  updateContacts(newContact: contactsInterface){
+  createContact(newContact: contactsInterface){
     
     //finding the highest Id
     let highestId = 0;
@@ -50,5 +50,21 @@ export class ContactsService {
       Address: newContact.Address,
 
     })
+  }
+
+  updateContact(updateContact: contactsInterface){
+
+    const index = this.contacts.findIndex(contact => contact.Id == updateContact.Id ); //Récupération de l'index du tableau "Contacts"
+    //MAJ du tableau "contacts" avec le contenu du formulaire
+    this.contacts[index].FirstName = updateContact.FirstName ;
+    this.contacts[index].LastName = updateContact.LastName ;
+    this.contacts[index].PhoneNumber = updateContact.PhoneNumber ;
+    this.contacts[index].Address = updateContact.Address ;
+
+  }
+
+  deleteContact(id: number){
+    const index = this.contacts.findIndex(contact => contact.Id == id );
+    this.contacts.splice(index, 1);     //Supprime le contact avec l'index correspondant
   }
 }

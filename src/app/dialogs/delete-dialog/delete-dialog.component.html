@@ -1,1 +1,33 @@
-<p>delete-dialog works!</p>
+
+<div id="deleteForm">
+    <form [formGroup]="deleteformGroup" (ngSubmit)="onSubmit()" class="contactForm">
+    
+        <h1 id="DeleteContactTitle">Delete Contacts</h1>
+                  <div class="inputDeleteForm">
+                        <mat-form-field class="example-full-width">
+                            <mat-label class="formInput">First Name</mat-label>
+                            <input class="formInput" matInput formControlName="firstName">
+                        </mat-form-field>
+                        
+                        <mat-form-field class="example-full-width">
+                            <mat-label class="formInput">Last Name</mat-label>
+                            <input class="formInput" matInput formControlName="lastName">
+                            </mat-form-field>
+                        
+                        <mat-form-field class="example-full-width">
+                            <mat-label class="formInput">Phone Number</mat-label>
+                            <input class="formInput" matInput formControlName="phoneNumber">
+                        </mat-form-field>
+                        
+                        <mat-form-field class="example-full-width">
+                            <mat-label class="formInput">Address</mat-label>
+                            <input class="formInput" matInput formControlName="address">
+                        </mat-form-field>
+                    </div>
+                 
+                <!-- La propriété "mat-dialog-close" permet de pouvoir clore la boite de dialogue en cliquant sur le bouton sans besoin de méthode "onCancel()"-->
+                <button mat-raised-button class="actionButtons" type="button" mat-dialog-close color="warn">Cancel</button> 
+                <button mat-raised-button class="actionButtons" type="submit" color="accent">Delete</button>
+            
+    </form>
+</div>  

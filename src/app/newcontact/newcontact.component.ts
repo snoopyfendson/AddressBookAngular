@@ -14,10 +14,10 @@ export class NewcontactComponent {
 
   newContact!: contactsInterface;
   contactformGroup = new FormGroup({    
-        firstName: new FormControl('', [Validators.required, Validators.maxLength(10)]),      
-        lastName: new FormControl('', [Validators.required, Validators.maxLength(10)]),   
-        phoneNumber: new FormControl('', [Validators.required, Validators.maxLength(8)]),    
-        address: new FormControl('', [Validators.required, Validators.maxLength(9)]),
+        firstName: new FormControl('', [Validators.required, Validators.maxLength(30)]),      
+        lastName: new FormControl('', [Validators.required, Validators.maxLength(30)]),   
+        phoneNumber: new FormControl('', [Validators.required, Validators.maxLength(30)]),    
+        address: new FormControl('', [Validators.required, Validators.maxLength(50)]),
   });
 
   constructor(private router: Router, private contactService: ContactsService){
@@ -27,12 +27,12 @@ export class NewcontactComponent {
     this.newContact = {
       Id: 0,
       FirstName: this.contactformGroup.controls['firstName'].value as string,
-      LastName: this.contactformGroup.controls['firstName'].value as string,
-      PhoneNumber: this.contactformGroup.controls['firstName'].value as string,
-      Address: this.contactformGroup.controls['firstName'].value as string,
+      LastName: this.contactformGroup.controls['lastName'].value as string,
+      PhoneNumber: this.contactformGroup.controls['phoneNumber'].value as string,
+      Address: this.contactformGroup.controls['address'].value as string,
     }
 
-    this.contactService.updateContacts(this.newContact);
+    this.contactService.createContact(this.newContact);
 
     console.log(this.contactService.getContacts());
 
